@@ -1,1 +1,11 @@
 theme: jekyll-theme-minimal
+title: [nickvergessen]
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+  - Makefile
+
