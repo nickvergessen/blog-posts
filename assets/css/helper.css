@@ -1,0 +1,15 @@
+@media (max-width: 720px) {
+    img.profile {
+        width: 64px;
+    }
+
+    .hide-when-small {
+        display: none;
+    }
+}
+
+@media print, screen and (max-width: 960px) {
+    .second-row {
+        top: 104px;
+    }
+}
