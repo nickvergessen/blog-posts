@@ -1,5 +1,6 @@
 theme: jekyll-theme-minimal
 title: [nickvergessen]
+blog_url: https://www.schilljs.com
 
 exclude:
   - Gemfile
