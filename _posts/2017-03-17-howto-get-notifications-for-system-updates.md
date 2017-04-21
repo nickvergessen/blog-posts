@@ -8,6 +8,8 @@ excerpt_separator: <!--more-->
 
 Keep your server up to date and receive a [notification](https://github.com/nextcloud/notifications) in your [Nextcloud](https://nextcloud.com) when php, apache, etc. need an update with this little script.
 
+**Update 21/Apr/17:** Also works on Raspbian and others now.
+
 <!--more-->
 
 > ![Notifications for system updates]({{ site.url }}/assets/posts/notifications-system-update.png)
@@ -43,3 +45,19 @@ Keep your server up to date and receive a [notification](https://github.com/next
     ```
 
 Leave comments in the [Nextcloud forum](https://help.nextcloud.com/t/howto-get-notifications-for-system-updates/10299).
+
+### [Update] Raspbian and other systems
+
+If your operating system does not support `apt-check`, you can also try to replace the line:
+
+```bash
+PACKAGES=$(/usr/lib/update-notifier/apt-check -p 2>&1)
+```
+
+with:
+
+```bash
+PACKAGES=$(apt-get -s dist-upgrade | awk '/^Inst/ { print $2 }' 2>&1)
+```
+
+This at least made it work on my Raspberry Pi which runs Raspbian.
