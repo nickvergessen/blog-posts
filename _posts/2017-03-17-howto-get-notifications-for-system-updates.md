@@ -12,7 +12,7 @@ Keep your server up to date and receive a [notification](https://github.com/next
 
 <!--more-->
 
-> ![Notifications for system updates]({{ site.url }}/assets/posts/notifications-system-update.png)
+> ![Notifications for system updates]({{ site.blog_url }}/assets/posts/notifications-system-update.png)
 
 1. Install the [admin_notifications](https://apps.nextcloud.com/apps/admin_notifications) app
 2. Create `system-notifications.sh` with the following content on your system, and make sure to adjust the path to your nextcloud `/var/www/nextcloud/occ` as well as your admin account name:
