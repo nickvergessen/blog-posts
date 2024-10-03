@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Save LibreOffice documents directly to Nextcloud
+title: 📥 Save LibreOffice documents directly to Nextcloud
 date: 2018-11-22
 tags: ['nextcloud']
 excerpt_separator: <!--more-->

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Better scheduling of activity emails
+title: 📬 Better scheduling of Nextcloud Activity emails
 date: 2017-05-09
 tags: ['nextcloud', 'activity']
 excerpt_separator: <!--more-->

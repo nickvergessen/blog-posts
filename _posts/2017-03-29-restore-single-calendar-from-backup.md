@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Restore a single calendar from a Nextcloud backup
+title: 📅 Restore a single calendar from a Nextcloud backup
 date: 2017-03-29
 tags: ['nextcloud', 'calendar']
 excerpt_separator: <!--more-->

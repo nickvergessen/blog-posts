@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Migrations for Nextcloud apps
+title: 🏬 Migrations for Nextcloud apps
 date: 2017-09-08
 tags: ['nextcloud']
 excerpt_separator: <!--more-->
