@@ -1,6 +1,7 @@
 ---
 layout: page
 title: cat ~/about.md
+pageTitle: nickvergessen:~/about.md$
 permalink: /about.html
 ---
 
