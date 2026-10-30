@@ -6,10 +6,12 @@ tags: ['nextcloud', 'notifications']
 excerpt_separator: <!--more-->
 ---
 
-Keep your server up to date and receive a [notification](https://github.com/nextcloud/notifications) in your [Nextcloud](https://nextcloud.com) when php, apache, etc. need an update with this little script.
+<ul class="updates">
+    <li>Update 2024-10-03: Utilizing features of Nextcloud 30 and later.</li>
+    <li>Update 2017-04-21: Also works on Raspbian and others now.</li>
+</ul>
 
-- Update October 03, 2024: *Utilizing features of Nextcloud 30 and later.*
-- Update April 21, 2017: *Also works on Raspbian and others now.*
+Keep your server up to date and receive a [notification](https://github.com/nextcloud/notifications) in your [Nextcloud](https://nextcloud.com) when php, apache, etc. need an update with this little script.
 
 <!--more-->
 
@@ -30,18 +32,18 @@ Keep your server up to date and receive a [notification](https://github.com/next
     NUM_PACKAGES=$(echo "$PACKAGES" | wc -l)
     
     if [ "$PACKAGES" != "" ]; then
-    	UPDATE_MESSAGE=$(echo "$PACKAGES" | sed -r ':a;N;$!ba;s/\n/, /g')
-    	NOTIFICATION_ID=$($OCC_PATH notification:generate $ADMIN  \
-    	    "{packages} require to be updated" --short-parameters "{\"packages\":{\"type\":\"highlight\",\"id\":\"count\",\"name\":\"$NUM_PACKAGES packages\"}}" \
-    	    -l "Packages to update: {list}" --long-parameters "{\"list\":{\"type\":\"highlight\",\"id\":\"list\",\"name\":\"$UPDATE_MESSAGE\"}}" \
-    	    --object-type='updates' --object-id='apt' --output-id-only)
+        UPDATE_MESSAGE=$(echo "$PACKAGES" | sed -r ':a;N;$!ba;s/\n/, /g')
+        NOTIFICATION_ID=$($OCC_PATH notification:generate $ADMIN  \
+            "{packages} require to be updated" --short-parameters "{\"packages\":{\"type\":\"highlight\",\"id\":\"count\",\"name\":\"$NUM_PACKAGES packages\"}}" \
+            -l "Packages to update: {list}" --long-parameters "{\"list\":{\"type\":\"highlight\",\"id\":\"list\",\"name\":\"$UPDATE_MESSAGE\"}}" \
+            --object-type='updates' --object-id='apt' --output-id-only)
         echo "$NOTIFICATION_ID" > apt-notification-id.txt
     elif [ -f /var/run/reboot-required ]; then
-    	NOTIFICATION_ID=$($OCC_PATH notification:generate $ADMIN "System requires a reboot"
+        NOTIFICATION_ID=$($OCC_PATH notification:generate $ADMIN "System requires a reboot"
         echo "$NOTIFICATION_ID" > apt-notification-id.txt
     else
         NOTIFICATION_ID=$(cat apt-notification-id.txt)
-    	$OCC_PATH notification:delete $ADMIN $NOTIFICATION_ID
+        $OCC_PATH notification:delete $ADMIN $NOTIFICATION_ID
     fi
     ```
 
@@ -86,10 +88,10 @@ PACKAGES=$(/usr/lib/update-notifier/apt-check -p 2>&1)
 NUM_PACKAGES=$(echo "$PACKAGES" | wc -l)
 
 if [ "$PACKAGES" != "" ]; then
-	UPDATE_MESSAGE=$(echo "Packages to update: $PACKAGES" | sed -r ':a;N;$!ba;s/\n/, /g')
-	$OCC_PATH notification:generate $ADMIN "$NUM_PACKAGES packages require to be updated" -l "$UPDATE_MESSAGE"
+    UPDATE_MESSAGE=$(echo "Packages to update: $PACKAGES" | sed -r ':a;N;$!ba;s/\n/, /g')
+    $OCC_PATH notification:generate $ADMIN "$NUM_PACKAGES packages require to be updated" -l "$UPDATE_MESSAGE"
 
 elif [ -f /var/run/reboot-required ]; then
-	$OCC_PATH notification:generate $ADMIN "System requires a reboot"
+    $OCC_PATH notification:generate $ADMIN "System requires a reboot"
 fi
 ```
