@@ -16,3 +16,13 @@ a {
         top: 104px;
     }
 }
+
+/* Prism tokens (eleventy-plugin-syntaxhighlight), GitHub colours like the old rouge theme */
+.token.comment, .token.prolog, .token.doctype, .token.cdata { color: #999988; font-style: italic; }
+.token.keyword, .token.operator, .token.important { color: #000000; font-weight: bold; }
+.token.string, .token.char, .token.attr-value { color: #d14; }
+.token.number, .token.boolean { color: #009999; }
+.token.variable, .token.attr-name { color: #008080; }
+.token.builtin, .token.class-name { color: #0086B3; }
+.token.function { color: #990000; font-weight: bold; }
+.token.tag { color: #000080; }

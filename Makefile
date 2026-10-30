@@ -1,5 +1,7 @@
 all: build-site
 
 build-site:
-	bundle exec jekyll serve
+	npx @11ty/eleventy
 
+serve:
+	npx @11ty/eleventy --serve

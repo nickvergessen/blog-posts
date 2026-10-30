@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About me
+permalink: /about.html
 ---
 
 Once there was a day, where I could not remember my nickname, so I signed up a second time and used the fact as my name: nick-vergessen (english: username forgotten). In order to avoid highlight problems in IRC and more, I use nickv as short version.
