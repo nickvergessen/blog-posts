@@ -3,9 +3,9 @@ layout: default
 ---
 
 <article class="page">
-  <p class="back"><a href="{{ '/' | relative_url }}">&laquo; Back</a></p>
+  <p class="back prompt"><a href="{{ '/' | relative_url }}">cd ~</a></p>
 
-  <h1>
+  <h1 class="prompt">
     {{ title }}
     {% if rss %}
       <a href="{{ rss | relative_url }}">
